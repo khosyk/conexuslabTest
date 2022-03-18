@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
-
+import Banner from './img/1.jpg'
 function App() {
   const [isId, setIsId] = useState(null);
   const [vieSurvey, setViewSurvey] = useState(true);
@@ -45,8 +45,8 @@ function GetUserId({ setViewSurvey, setIsId }) {
 
 
   return (
-    <div>
-      <span>ID를 입력 하시면 설문조사를 진행하실수 있습니다.</span>
+    <div id='get_user_id'>
+      <span>ID 입력하면 설문조사를 진행합니다.</span>
       <input
         className='user_id'
         type='text'
@@ -64,6 +64,10 @@ function GetUserId({ setViewSurvey, setIsId }) {
 }
 
 function Survey({ setEventAnswer, isId, setData }) {
+  {/*
+  만약 진짜 데이터가 있었다면 일반 텍스트 부분에는 요청한 axios.get, data state 를 이용한 데이터의 정보가 들어갑니다.
+  */}
+
   const [surveyDate, setSurveyDate] = useState([]);
   const [multi, setMulti] = useState([]);
   const [answers, setAnswers] = useState({
@@ -152,7 +156,7 @@ function Survey({ setEventAnswer, isId, setData }) {
   }
   return (
     <>
-      <table>
+      <table id='survey'>
         <tbody>
           <tr className='input_id'>
             <td>
@@ -161,23 +165,28 @@ function Survey({ setEventAnswer, isId, setData }) {
           </tr>
           <tr className='title'>
             <td>
-              커넥서스랩 설문조사
+              <h1>커넥서스랩 설문조사</h1>
             </td>
           </tr>
           <tr className='input_header'>
             <td>
-              <img src='#' alt='#'></img>
+              <img src={Banner} alt='#'></img>
             </td>
           </tr>
           <tr className='created_datetime'>
             <td>
+            <strong>시작 시간</strong>
+            <span>
               {surveyDate ? surveyDate[0] : ''}
+            </span>
             </td>
           </tr>
           <tr className='updated_datetime'>
             <td>
-              업데이트 시간
+              <strong>업데이트 시간</strong>
+              <span>
               {surveyDate ? surveyDate[surveyDate.length - 1] : ''}
+              </span>
             </td>
           </tr>
           <tr className="block1">
@@ -297,11 +306,7 @@ function EventAnswer({data:totalData}) {
   만약 진짜 데이터가 있었다면 숫자 부분에는 다시 axios.get 을 이용한 토탈 데이터의 정보가 들어갑니다.
   */}
   return (
-    <>
-      <button onClick={() => {
-        console.log(user_id);
-        console.log(data);
-      }}>e</button>
+    <div id='event_answer'>
       <h2>설문조사 통계 with.{user_id}</h2>
       <div class='chart'>
         <div>
@@ -331,7 +336,8 @@ function EventAnswer({data:totalData}) {
           </dl>
         </div>
       </div>
-    </>
+      
+    </div>
   )
 }
 

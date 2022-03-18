@@ -4,6 +4,7 @@
     margin:0px;
     padding:0px;
     box-sizing:border-box;
+    font-size: 14px;
 }
 
 ul,ol,li{
@@ -14,6 +15,207 @@ a{
     text-decoration: none;
 }
 
+body{
+    background-color: #e7f5ff;
+}
+
 table{
   display: block;
+}
+
+#get_user_id{
+    background-color: #fff;
+    width:80%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin:10vh auto;
+    padding: 5vh 0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #ddd;
+    text-align: center;
+}
+
+#get_user_id .user_id{
+    margin:3vh 0;
+    padding:5px 10px;
+}
+
+#get_user_id .user_id_btn{
+    padding:5px 10px;
+    background-color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#get_user_id .user_id_btn:hover{
+    transform: translateY(-1px);
+    box-shadow: 1px 1px 1px #ddd;
+}
+
+#survey{
+    background-color: #fff;
+    width:80%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin:10vh auto;
+    padding: 10px 0px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #ddd;
+}
+
+
+#survey tr th{
+    width:100%;
+    display: block;
+    margin:0px auto;
+    padding:10px 0px;
+    outline: 2px solid #e7f5ff;
+    background-color: #d0ebff;
+}
+
+#survey tr td{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin:20px auto;
+    font-size: 12px;
+}
+
+#survey tr td label{
+    line-height: 15px;
+    font-size: 13px;
+    margin-left:2px;
+    margin-bottom: 2px;
+}
+
+#survey .input_id td{
+    width:100%;
+    display: flex;
+    justify-content: right;
+}
+
+#survey .title td h1{
+    font-size: 16px;
+
+}
+
+#survey .input_header td img{
+    width:100%;
+    max-height: 350px;
+}
+
+#survey .created_datetime td{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#survey .created_datetime td strong{
+    font-size: 12px;
+    padding-bottom: 2px;
+}
+
+#survey .created_datetime td span{
+    display: block;
+}
+
+#survey .updated_datetime td {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#survey .updated_datetime td strong{
+    font-size: 12px;
+    padding-bottom: 2px;
+}
+
+#survey .updated_datetime td span{
+    display: block;
+}
+
+#survey tr td button{
+    padding:5px 10px;
+    background-color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#survey tr td button:hover{
+    transform: translateY(-1px);
+    box-shadow: 1px 1px 1px #ddd;
+}
+
+
+#event_answer{
+    background-color: #fff;
+    width:80%;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin:10vh auto;
+    padding: 5vh 0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #ddd;
+}
+
+#event_answer .chart{
+    border:1px solid #eee;
+    width:90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#event_answer .chart div{
+    width:100%;
+    border-bottom: 1px solid #eee;
+
+}
+
+#event_answer .chart div dl{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding:0px 1px;
+}
+
+#event_answer .chart div dl dd{
+    display: flex;
+    justify-content: space-between;
+}
+#event_answer .chart div dl dd strong{
+text-align: left;
+}
+#event_answer .chart div dl dd em{
+    margin-right: 2px;
+}
+
+#event_answer .chart div:nth-child(1) dl dd strong{
+    background-color: #d0ebff;
+    width:7.9%;
+}
+#event_answer .chart div:nth-child(2) dl dd strong{
+    background-color: #74c0fc;
+    width:13%;
+}
+#event_answer .chart div:nth-child(3) dl dd strong{
+    background-color: #74c0fc;
+    width:20.9%;
+}
+#event_answer .chart div:nth-child(4) dl dd strong{
+    background-color: #4dabf7;
+    width:35.1%;
+}
+#event_answer .chart div:nth-child(5) dl dd strong{
+    background-color: #74c0fc;
+    width:23.1%;
 }
