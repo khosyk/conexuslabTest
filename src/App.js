@@ -128,7 +128,25 @@ function Survey({setEventAnswer}, isId) {
     }
   }
 
+  const sendData = async () => {
+    await axios.post('http://event.conexuslab.co.kr/survey/1/answers', JSON.stringify({
+      user_id: isId,
+      value: answers
+    }))
+  }
 
+  const handleSend = () => {
+    if(answers[1] && answers[2] && answers[3] && answers[4] !== [] && answers[5]){
+      setEventAnswer(true);
+      setAnswers({...answers,"4" : multi});
+      sendData();
+      localStorage.setItem('user_id', JSON.stringify(isId))
+      localStorage.setItem('value', JSON.stringify(answers))
+    }else{
+      alert('모든 질문에 답변 하셔야 합니다.');
+      return;
+    }
+  }
   return (
     <>
       <table>
@@ -260,7 +278,7 @@ function Survey({setEventAnswer}, isId) {
           </tr>
           <tr>
             <td>
-              <button onClick={() => ''}>제출</button>
+              <button onClick={() => handleSend()}>제출</button>
             </td>
           </tr>
         </tbody>
